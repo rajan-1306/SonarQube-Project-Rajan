@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/KastroVKiran/SonarQube-Project-Kastro.git'
+                git branch: 'main', url: 'https://github.com/rajan-1306/SonarQube-Project-Rajan.git'
             }
         }
 
@@ -35,7 +35,7 @@ pipeline {
         stage('Sonar Analysis') {
             steps {
                 withSonarQubeEnv('sonar-server') {
-                    sh "$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Kastro -Dsonar.projectKey=KastroKey -Dsonar.java.binaries=target"
+                    sh "$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Rajan -Dsonar.projectKey=RajanKey -Dsonar.java.binaries=target"
                 }
             }
         }
